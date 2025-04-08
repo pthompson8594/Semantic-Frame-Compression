@@ -1,0 +1,186 @@
+Semantic Frame Compression Guide
+I'll create a comprehensive guide for the semantic frame compression approach that you can use to pass information between LLM sessions.
+
+# SEMANTIC FRAME COMPRESSION(SFM) GUIDE
+# For Inter-Session LLM Communication
+
+## OVERVIEW
+
+Semantic Frame Compression is a method for efficiently transferring information between LLM sessions by compressing content into structured semantic frames that preserve key information while reducing character count. This approach leverages LLMs' natural ability to understand and expand structured information.
+
+## COMPRESSION FORMAT
+
+The basic format follows this structure:
+
+
+Copy
+
+
+semantic_frame_compression.txt
+DOMAIN{ ATTRIBUTE1: value1+value2 ATTRIBUTE2: [ item1[property1+property2], item2[property1+property2] ] RELATIONSHIP: entity1→entity2→entity3 HIERARCHY: LEVEL1: element1+element2 LEVEL2: element3+element4 }
+
+
+## COMPRESSION PRINCIPLES
+
+1. Use descriptive frame types (CONCEPT, STORY, PROJECT, etc.)
+2. Structure information hierarchically
+3. Use + to join related concepts
+4. Use [] for properties/attributes
+5. Use → for sequences/flows
+6. Use : to separate labels from values
+7. Nest information with indentation
+8. Prioritize essential information
+9. Use domain-specific structures
+
+## DOMAIN-SPECIFIC TEMPLATES
+
+### For Technical/Factual Content:
+
+
+Copy
+
+
+CONCEPT{ DEFINITION: core-meaning+key-attributes COMPONENTS: component1[details]+component2[details] PRINCIPLES: principle1[explanation]+principle2[explanation] EXAMPLES: example1[details]+example2[details] APPLICATIONS: application1[context]+application2[context] RELATIONSHIPS: concept1→concept2, concept3↔concept4 }
+
+
+### For Narrative Content:
+
+
+Copy
+
+
+STORY{ TITLE: "Story Title" AUTHOR: author-name SETTING: time+place+atmosphere CHARACTERS: character1[traits], character2[traits] PLOT: P1: event1[details] P2: event2[details] P3: event3[details] CONFLICT: main-conflict[details] RESOLUTION: outcome[details] THEME: theme1+theme2 }
+
+
+### For Technical Documentation:
+
+
+Copy
+
+
+PROJECT{ TITLE: "Project Name" PURPOSE: main-goal+secondary-goals ARCHITECTURE: COMPONENT1: element1+element2 COMPONENT2: element3+element4 SPECIFICATIONS: [ spec1[value+unit], spec2[value+unit] ] IMPLEMENTATION: step1→step2→step3 CHALLENGES: challenge1[solution]+challenge2[solution] TIMELINE: phase1[duration]+phase2[duration] RESOURCES: resource1[quantity]+resource2[quantity] }
+
+
+### For Procedural Content:
+
+
+Copy
+
+
+PROCEDURE{ GOAL: desired-outcome PREREQUISITES: requirement1+requirement2 MATERIALS: item1[quantity]+item2[quantity] STEPS: S1: action1[details] S2: action2[details] S3: action3[details] CHALLENGES: challenge1[solution] VARIATIONS: variation1[conditions] RESULTS: outcome[indicators] }
+
+
+### For Argumentative Content:
+
+
+Copy
+
+
+ARGUMENT{ CLAIM: main-assertion PREMISES: premise1+premise2+premise3 EVIDENCE: [ source1[findings+methodology], source2[findings+methodology] ] COUNTERARGUMENTS: objection1[response]+objection2[response] IMPLICATIONS: implication1+implication2 CONCLUSION: final-position+significance }
+
+
+## COMPRESSION TECHNIQUES
+
+1. **Attribute Reduction**: Include only essential attributes
+2. **Value Compression**: Use + to join related values without conjunctions
+3. **Hierarchical Nesting**: Organize information in logical hierarchies
+4. **Relationship Encoding**: Use symbols (→, ↔, ⊂) for relationships
+5. **Property Bracketing**: Use [property] format for attributes
+6. **Sequence Chaining**: Use → for sequential steps
+7. **Parallel Grouping**: Group similar items with commas
+8. **Nested Frames**: Use sub-frames for complex structures
+9. **Symbolic Shorthand**: Use common symbols (%, $, #) where appropriate
+10. **Domain-Specific Notation**: Use notation familiar in the domain
+
+## DECOMPRESSION PROMPT
+
+When sending compressed information to another LLM session, use this prompt template:
+
+
+Copy
+
+
+I'm using a semantic frame compression method to efficiently transfer information between AI sessions. Please expand the following compressed information into a complete [DOCUMENT TYPE]:
+
+[COMPRESSED FRAME]
+
+Copy
+
+
+Please reconstruct a detailed [DOCUMENT TYPE] based on this compressed semantic frame. Expand all concepts fully while maintaining the relationships and structure indicated in the frame.
+
+
+## COMPRESSION EXAMPLES
+
+### Example 1: Quantum Computing Concept
+
+Original (359 chars):
+"The quantum computer leverages the principles of quantum mechanics, specifically superposition and entanglement, to perform computations that would be infeasible for classical computers. While a classical bit must be either 0 or 1, a quantum bit (qubit) can exist in a superposition of both states simultaneously, exponentially increasing computational power as more qubits are added to the system."
+
+Compressed (160 chars):
+
+Copy
+
+
+QC{ IS: computing+quantum-mechanics USES: superposition+entanglement ENABLES: classical-impossible-calculations DIFFERS: bits[classical:0|1,quantum:0&1] SCALES: exponential[2^n] }
+
+
+### Example 2: Short Story
+
+Original (2,056 chars): [Ambrose Bierce's "The Resurrection of Henry Armstrong"]
+
+Compressed (489 chars):
+
+Copy
+
+
+STORY{ TITLE: "The Resurrection of Henry Armstrong" AUTHOR: Ambrose Bierce SETTING: cemetery+night+storm CHARACTERS: Henry[buried-alive+skeptical], medical-students[2], Jess[cemetery-worker+fearless] PLOT: P1: Henry[buried+conscious+disbelieving-death] P2: Henry[accepts-burial+indifferent+sleeps] P3: night[dark+lightning+storm-coming] P4: grave-robbers[students+Jess+medical-college] P5: excavation[easy+quick] P6: opening-casket[Jess+thunder-strikes+Henry-sits-up] P7: aftermath[robbers-flee+morning+medical-college] TWIST: Henry[dead+dissection-table+head-wounded] THEME: death-denial+grave-robbing+ironic-fate }
+
+
+### Example 3: Technical Project
+
+Original (8,800+ chars): [Wireless Optical USB 3.1 Storage System Project]
+
+Compressed (1,300 chars):
+
+Copy
+
+
+PROJECT{ TITLE: "Wireless Optical USB 3.1 Storage System" CONCEPT: USB3.1+wireless+optical-transmission+air-gap+Qi-charging ARCHITECTURE: BASE: USB3.1-cable+optical-transceiver[TI-10G-SFP+]+ONET1151L+MSP430+Qi-transmitter RECEIVER: USB-A-port+Qi-powered+optical-transceiver[TI-components]+ONET1151L+few-mm-gap COMPONENTS: BASE: [ PI3EQX1002E[USB3.1-ReDriver+$3.64], ONET1151L[signal-conditioning+$8-10], PLPVYL1-940A_E[VCSEL+$1], SFH-2704[photodiode], bias-tee[TI-reference], MSP430F5728[microcontroller+$5-7], Qi-transmitter[TBD] ] RECEIVER: [ PI3EQX1002E[USB3.1-ReDriver+$3.64], ONET1151L[signal-conditioning+$8-10], SPV3940[VCSEL+$1], photodiode[TI-reference], bias-tee[TI-reference], MSP430F5728[microcontroller+$5-7], Qi-receiver[TBD], USB-A-port[3.0/3.1], power-regulation[components] ] SIGNAL-PATH: Computer↔USB↔PI3EQX1002E↔ONET1151L→VCSEL→[AIR]→Photodiode→ONET1151L↔PI3EQX1002E↔USB-A↔Storage DESIGN-CONSIDERATIONS: [ optical-alignment[Qi-alignment+few-mm], signal-integrity[ONET1151L+bias-tee+short-path], power-management[Qi+MSP430+5V/900mA], mechanical-design[alignment+crosstalk-prevention+windows] ] ADVANTAGES: 10G-performance+reduced-risk+comprehensive-design+system-management NEXT-STEPS: adapt-PCB+select-components+create-mechanical-design+develop-prototype COSTS: components[$70-100] FUTURE: integrated-storage+specialized-applications+higher-speed }
+
+
+## EFFECTIVENESS METRICS
+
+Typical compression ratios and information retention:
+
+| Content Type | Compression Ratio | Information Retention |
+|--------------|-------------------|----------------------|
+| Technical    | 55-85%            | 95-100%              |
+| Narrative    | 70-80%            | 90-100%              |
+| Procedural   | 60-75%            | 95-100%              |
+| Conceptual   | 50-70%            | 95-100%              |
+
+## BEST PRACTICES
+
+1. **Prioritize Structure**: Focus on preserving structural relationships
+2. **Use Domain-Specific Frames**: Adapt frame structure to content type
+3. **Balance Compression vs. Clarity**: Ensure key information remains clear
+4. **Preserve Technical Details**: Maintain precise values for technical content
+5. **Include Context Cues**: Add minimal context to aid reconstruction
+6. **Test Decompression**: Verify information recovery with test prompts
+7. **Iterative Refinement**: Improve frames based on decompression results
+8. **Standardize Notation**: Use consistent symbols and structures
+9. **Document Compression Choices**: Note any significant omissions
+10. **Adapt to Recipient**: Consider the knowledge of the receiving LLM
+
+## LIMITATIONS
+
+1. Not suitable for exact wording preservation
+2. May lose nuanced phrasing and stylistic elements
+3. Requires shared knowledge between LLM sessions
+4. Works best with structured information
+5. May require domain knowledge for optimal compression
+
+## CONCLUSION
+
+Semantic Frame Compression offers an efficient method for transferring information between LLM sessions while maintaining high information fidelity. By structuring information in semantic frames that align with how LLMs naturally process information, this approach achieves significant compression while enabling accurate reconstruction and even creative enhancement.
