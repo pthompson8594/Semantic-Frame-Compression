@@ -1,10 +1,10 @@
-Semantic Frame Compression (SFM)
+Semantic Frame Compression (SFC)
 A lightweight, standardized method for efficiently transferring complex information between LLM sessions. The Semantic Frame Compression is LLM generated as it makes the most sense to have it written in a way they will understand.
 
-What is SFM?
+What is SFC?
 Semantic Frame Compression is a structured format that allows you to compress large amounts of information into a compact representation that language models can easily reconstruct. It preserves semantic relationships and hierarchical structure while drastically reducing token usage.
 
-Why Use SFM?
+Why Use SFC?
 Context Window Optimization: Transfer hours of conversation in a single message
 Information Retention: Maintains 90-100% of critical information
 Compression Efficiency: Achieves 50-85% reduction in character count
