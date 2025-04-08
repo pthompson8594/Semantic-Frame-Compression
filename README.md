@@ -11,11 +11,12 @@ Compression Efficiency: Achieves 50-85% reduction in character count
 No Special Tools Required: Works with any text-based LLM interface
 Domain Adaptability: Templates for technical, narrative, procedural content
 
-Quick Start
+Quick Start Quide
+-----------------------------------------------------
 Compression:
 To compress information, use this basic structure:
 
-Provide LLM with contents of the Semantic Frame Compression text file which standardizes the compressed response.
+Provide LLM with contents of the Semantic Frame Compression text file which standardizes the compressed response as a prompt. (Copy Paste or a make default prompt out of it)
 
 Prompt: 
 Using the Semantic Frame Compression(SFC), compress the following information:
@@ -24,7 +25,7 @@ Using the Semantic Frame Compression(SFC), compress the following information:
 
 Decompression:
 
-Provide LLM with contents of the Semantic Frame Compression text file.
+Provide LLM with contents of the Semantic Frame Compression text file. (Copy Paste or a make default prompt out of it)
 
 Prompt:
 Using the Semantic Frame Compression(SFC), expand the following compressed information:
