@@ -44,6 +44,8 @@ QC{
   SCALES: exponential[2^n] 
 }
 
+More details in the Semantic Frame Compression text file.
+
 I have tried it with a couple different LLM (Claude 3.7, Llama3.1) and it seem to work very well but mileage may vary, might be helpful to someone.
 
 License
