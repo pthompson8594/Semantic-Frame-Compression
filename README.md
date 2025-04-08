@@ -31,7 +31,7 @@ Prompt:
 Using the Semantic Frame Compression(SFC), expand the following compressed information:
 [COMPRESSED FRAME]
 
-
+-----------------------------------------------------
 Example
 Original (359 chars): "The quantum computer leverages the principles of quantum mechanics, specifically superposition and entanglement, to perform computations that would be infeasible for classical computers. While a classical bit must be either 0 or 1, a quantum bit (qubit) can exist in a superposition of both states simultaneously, exponentially increasing computational power as more qubits are added to the system."
 
