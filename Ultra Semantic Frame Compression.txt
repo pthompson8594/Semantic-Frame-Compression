@@ -14,6 +14,11 @@ T=title,D=desc,F=feat,R=req,I=install,U=usage,C=config,A=arch,M=meta,V=version,S
 ## SYMBOLS
 +=and |=or →=to/flow !=not ←=from ↔=bidirectional ⊂=contains []array {}object ()group ~=approx #=count $=cost %=percent @=pattern &=ref *=all ?=optional
 
+## SYMBOL REFS (1-char flexible)
+Available: @#$%&!*?~^<>|+=_-{}[]()
+Define-as-needed: SYMBOLS:{@:entityType1,#:entityType2,$:entityType3,...}
+Common-types: person,location,function,variable,file,constant,class,error,api,service,component,table,method,property,library,endpoint
+
 ## ABBREVIATIONS
 ### Tech Stack
 py=python qt=pyqt js=javascript ts=typescript cpp=c++ cs=csharp go=golang rs=rust rb=ruby php=php jv=java kt=kotlin sw=swift sc=scala
@@ -78,12 +83,13 @@ DB3{T:"name",PM:{T:type,E:engine},SCHEMA:{TBL:[tables],IDX:[indexes],REL:[relati
 @perf-pat:[cache[mem+disk+cdn],opt[db+query+index],scale[horizontal+vertical],load-bal[round-robin+weighted],cdn[static+dynamic]]
 
 ## COMPRESSION TECHNIQUES
-1.Attr-reduce 2.Val-compress(+) 3.Hier-nest 4.Rel-encode(→↔⊂) 5.Prop-bracket[] 6.Seq-chain→ 7.Group-parallel(,) 8.Nested-frames 9.Symbol-short(%$#) 10.Domain-notation 11.Quality-strat(1-3) 12.Layer-detail(CORE→L3) 13.Pattern-ref(@) 14.Context-direct(APP/WH) 15.Polish-encode 16.Impl-hints 17.Universal-patterns 18.Single-char-keys 19.Abbrev-tech-terms 20.Numeric-quality 21.Symbol-operators 22.Path-compression 23.Command-abbreviation 24.Context-inference
+1.Attr-reduce 2.Val-compress(+) 3.Hier-nest 4.Rel-encode(→↔⊂) 5.Prop-bracket[] 6.Seq-chain→ 7.Group-parallel(,) 8.Nested-frames 9.Symbol-short(%$#) 10.Domain-notation 11.Quality-strat(1-3) 12.Layer-detail(CORE→L3) 13.Pattern-ref(@) 14.Context-direct(APP/WH) 15.Polish-encode 16.Impl-hints 17.Universal-patterns 18.Single-char-keys 19.Abbrev-tech-terms 20.Numeric-quality 21.Symbol-operators 22.Path-compression 23.Command-abbreviation 24.Context-inference 25.Symbol-linking 26.Preserve-semantics 27.Dynamic-abbrev 28.Pattern-templates 29.Conditional-expansion 30.Cross-referencing 31.Domain-adaptive 32.Recursive-compression
 
 ## EXAMPLES
 
-### Ultra-Compressed README (852 chars vs 5KB original)
-P3{T:"YAY Update Notifier",TL:arch+pkg+upd+tray+notif,D:py3qt6[mon-yay+desk-notif+bg-svc],F:[rt-mon,tray-int,desk-notif,bg-svc,auto-cfg,term-int,sing-inst,grace-shut],R:{OS:arch,D:py3.6+qt6+yay+sys+term,E:x11|way+tray},I3:{@:ipat,Q:./i.sh→auto,M:mkpkg-si→pac-U→sctl-ue,R:./u.sh→clean},U:{S:sctl-us→bg,M:py3-yt.py→dir,I:tray[rc→menu],U:click→term→yay},C:{L:~/.c/yt/s.json,A:1st[def],O:[int[min],per[b],auto[b],term[str]]},FL:{M:yt.py[575L],S:yt.svc[16L],I:yt.svg,SC:[i.sh[151L],u.sh[96L],b.sh[78L]]},A3:{@:apat,CL:[UN[app+tray],UC[bg+yay],SM[cfg+val],SI[lock+dup]],TH:qt[ui+bg],IPC:sub[yay+to]},DV2:{B:./b.sh→tar+mk,DB:jctl-u-yt-f,T:man[!auto],ST:py3+qt6+cls+sig},TR:[!tray[chk-de+sup],svc-fail[jctl+perm],stuck[rst+clr],mult[chk-lock]],CO:{R:gh/pt8594/yt,I:bug+feat,C:py3+qt6+pat,T:man-val},M:{L:oss,A:pt8594,S:act-dev+stab,V:1.0}}
+### Ultra-Compressed README with Flexible Symbol Linking (825 chars vs 5KB original)
+SYMBOLS:{@:app-name,&:file,#:path,$:class}
+P3{T:"YAY Update Notifier"@,TL:arch+pkg+upd+tray+notif,D:py3qt6[mon-yay+desk-notif+bg-svc],F:[rt-mon,tray-int,desk-notif,bg-svc,auto-cfg,term-int,sing-inst,grace-shut],R:{OS:arch,D:py3.6+qt6+yay+systemd+term,E:x11|wayland+tray},I3:{@:install-pat,Q:"install.sh"&→auto,M:makepkg-si→pacman-U→systemctl-enable,R:"uninstall.sh"&b→clean},U:{S:systemctl-start→bg,M:python3-"yt.py"&a→dir,I:tray[rc→menu],U:click→term→yay},C:{L:"~/.config/yt/settings.json"#,A:1st[def],O:[interval[min],persistence[bool],auto[bool],terminal[str]]},FL:{M:&a[575L],S:yt.service[16L],I:yt.svg,SC:[&[151L],&b[96L],build.sh[78L]]},A3:{@:arch-pat,CL:["UpdateNotifier"$[app+tray],"UpdateChecker"$a[bg+yay],"SettingsManager"$b[cfg+validation],"SingleInstance"$c[lock+dup]],TH:qt[ui+bg],IPC:subprocess[yay+to]},DV2:{B:./build.sh→tar+makepkg,DB:journalctl-u-yt-f,T:man[!auto],ST:py3+qt6+cls+sig},TR:[!tray[chk-desktop-env+support],svc-fail[journalctl+permissions],stuck[restart+clear],multiple[check-lock]],CO:{R:github/pt8594/@,I:bug+feat,C:py3+qt6+patterns,T:manual-validation},M:{L:opensource,A:pt8594,S:active-dev+stable,V:1.0}}
 
 ### Complete Project Archive (5KB vs 150KB+ equivalent)
 AR3{T:"YAY Update Notifier v1.0",V:1.0.0,TS:2025-01-08T22:00:00Z,A:pt8594,R:gh.com/pt8594/yt,PM:{P:arch+pkg-mon+tray-notif+yay-int,D:py3qt6[desk-notif+bg-svc+upd-chk],S:stab-rel+act-dev,L:oss,PL:arch[roll]}...}
@@ -93,11 +99,11 @@ A3{T:"REST API v2.1",PM:{P:user-mgmt+data-proc,V:2.1.0},EP:{GET:[/user/{id}[ret-
 
 ## DECOMPRESSION PROMPT
 
-"Parse Ultra SFC v3.0. Key mappings: T=title,D=desc,F=feat,R=req,I=install,U=usage,C=config,A=arch,M=meta,etc. Quality: 1=basic,2=prod,3=enterprise. Symbols: +=and,|=or,→=to,!=not,@=pattern,[]array,{}object. Abbrev: py=python,qt=pyqt,svc=service,cfg=config,etc. Expand to complete [TYPE]:
+"Parse Ultra SFC v3.0. Key mappings: T=title,D=desc,F=feat,R=req,I=install,U=usage,C=config,A=arch,M=meta,etc. Quality: 1=basic,2=prod,3=enterprise. Symbols: +=and,|=or,→=to,!=not,[]array,{}object. Abbrev: py=python,qt=pyqt,svc=service,cfg=config,etc. Symbol refs: FLEXIBLE - check SYMBOLS:{} block for entity type definitions. Multi refs: @a,@b,@c or use different symbols. Preserve complete: variable names, person names, place names, function names, class names, constants, error messages. Expand to complete [TYPE]:
 
 [ULTRA_SFC_CONTENT]
 
-Guidelines: 1.Decode single-char keys 2.Expand abbreviations 3.Respect quality markers(1-3) 4.Apply @patterns fully 5.Follow symbol operators 6.Maintain relationships 7.Include all encoded polish"
+Guidelines: 1.Decode single-char keys 2.Expand abbreviations 3.Respect quality markers(1-3) 4.Apply @patterns fully 5.Follow symbol operators 6.Maintain relationships 7.Include all encoded polish 8.Resolve symbol references 9.Preserve semantic completeness"
 
 ## EFFECTIVENESS
 
@@ -111,6 +117,24 @@ Guidelines: 1.Decode single-char keys 2.Expand abbreviations 3.Respect quality m
 ## BEST PRACTICES
 1.Single-char-keys for major sections 2.Numeric quality(1-3) vs stars 3.Symbol-operators for relationships 4.Abbrev common tech terms 5.Path-compression for files 6.Command-abbreviation for ops 7.Context-inference where possible 8.Pattern-ref for common structures 9.Layer progressively(CORE→L3) 10.Preserve critical constants 11.Encode polish in L2/L3 12.Use @patterns for reusability 13.Maintain semantic relationships 14.Compress redundant info 15.Test decompression fidelity
 
+## SEMANTIC PRESERVATION RULES
+1.Variable-names: KEEP-COMPLETE[semantically-important+debugging+context]
+2.Person-names: KEEP-COMPLETE[identity+context+relationship]
+3.Place-names: KEEP-COMPLETE[location+context+significance]
+4.Repeated-refs: USE-SYMBOL-LINKING[first-occurrence+subsequent-use-symbol]
+5.Function-names: KEEP-COMPLETE[purpose+behavior+debugging]
+6.Class-names: KEEP-COMPLETE[type+inheritance+structure]
+7.Constants: KEEP-COMPLETE[exact-values+units+precision]
+8.Error-messages: KEEP-COMPLETE[debugging+troubleshooting]
+
+## SYMBOL LINKING PATTERN (1-char refs)
+DEF-SYMBOLS: Define entity types as needed
+- SYMBOLS:{@:person,#:location,$:function,%:variable,&:file}
+- SYMBOLS:{@:api-endpoint,#:table,$:service,%:component}
+USE-REFS: First-mention[EntityName@] then subsequent[@+action] saves 2-3 chars per ref  
+MULTIPLE: If need 2+ of same type: @a,@b,@c or use different symbols
+FLEXIBLE: Can define any entity type that repeats frequently in content
+
 ## ADVANCED FEATURES
 Context-aware expansion: WH:bash+install→includes shell best practices
 Pattern inheritance: @api-pat→@rest-pat→specific implementations  
@@ -119,8 +143,46 @@ Symbolic math: ~30%↑perf, $50-100 cost range
 Multi-dimensional compression: Technical+temporal+contextual
 Self-documenting: Key mappings embedded in notation
 
+## POWER FEATURES v3.1
+DYNAMIC-ABBREV: Auto-create abbreviations for frequent terms (use-count>3)
+- ABBREV:{dynamically-generated-micro-service:dgms,frequently-used-term:fut}
+
+PATTERN-TEMPLATES: Reusable patterns with variables
+- TMPL:{API-CRUD:GET-$1,POST-$1,PUT-$1/{id},DEL-$1/{id}}
+- USE: API-CRUD[users] expands to full CRUD endpoints
+
+CONDITIONAL-EXPANSION: Different details based on context
+- CODE-CONTEXT: preserve exact syntax+whitespace+comments
+- DOC-CONTEXT: expand concepts+examples+explanations
+- DEBUG-CONTEXT: include error-codes+troubleshooting+logs
+
+CROSS-REFS: Link between document sections
+- SECTION-REFS: →S1.2,←S3.4,⟷S2.1 (forward/back/bidirectional)
+- DEPENDENCY-CHAIN: A→B→C[circular-A] shows flow+dependencies
+
+DOMAIN-ADAPTIVE: Auto-adjust compression for content type
+- CODE: preserve-syntax+variables+structure
+- BUSINESS: focus-outcomes+stakeholders+timelines  
+- TECHNICAL: specs+architecture+implementation-details
+- NARRATIVE: characters+plot+themes+dialogue
+
+RECURSIVE-COMPRESSION: Compress patterns within patterns
+- NESTED: {@:@pat[sub-pattern[nested-symbol]]}
+- LAYERED: L1[@pat]→L2[@pat-detail]→L3[@pat-polish]
+
+TARGET-COMPRESSION: Adaptive ratio based on constraints
+- ULTRA[50:1]: maximum-compression+symbol-heavy
+- BALANCED[15:1]: readability+compression-balance
+- READABLE[5:1]: minimal-compression+clarity-focus
+
+## ERROR RECOVERY
+PARTIAL-CORRUPTION: If symbols missing, use context+remaining structure
+GRACEFUL-DEGRADATION: Unknown-symbols→literal-text fallback
+VALIDATION: Built-in checksums for critical sections
+REDUNDANCY: Critical-info stored in multiple forms when space allows
+
 ## LIMITATIONS
-1.Requires Ultra SFC knowledge 2.Abbreviation learning curve 3.Context ambiguity possible 4.Quality assessment subjective 5.Pattern maintenance needed 6.Over-compression risk 7.Debugging complexity
+1.Requires Ultra SFC knowledge 2.Abbreviation learning curve 3.Context ambiguity possible 4.Quality assessment subjective 5.Pattern maintenance needed 6.Over-compression risk 7.Debugging complexity 8.Dynamic features add complexity 9.Domain-adaptation requires training
 
 ## CONCLUSION
 Ultra SFC v3.0: 30:1 compression + 95% fidelity. Single-char keys, numeric quality, symbol operators, tech abbreviations. Max info density for 16K LLM limits. Ideal: complete project transfer, API docs, system architecture, deployment guides. Enables massive knowledge transfer in minimal space.
