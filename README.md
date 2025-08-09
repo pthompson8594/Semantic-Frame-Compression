@@ -1,10 +1,9 @@
 # Semantic Frame Compression (SFC)
 
-A lightweight, standardized method for efficiently transferring complex information between LLM sessions. Now featuring **Ultra SFC v3.1** with advanced compression capabilities achieving up to **50:1 compression ratios** while maintaining 95%+ semantic fidelity.
+Semantic Frame Compression is a highly compact method for condensing large, complex conversations, datasets, or project knowledge into a symbolic, abbreviation-heavy format that any LLM can fully reconstruct — without requiring special decoders.
 
-## What is SFC?
-
-Semantic Frame Compression is a structured format that allows you to compress large amounts of information into a compact representation that language models can easily reconstruct. It preserves semantic relationships and hierarchical structure while drastically reducing token usage.
+Unlike ordinary summaries, SFC preserves every key semantic relationship in a compressed symbolic form.
+It is not designed for easy human reading — in fact, its compactness comes from prioritizing machine parsing over human scanning.
 
 ## Why Use SFC?
 
@@ -14,7 +13,6 @@ Semantic Frame Compression is a structured format that allows you to compress la
 - **Flexible Symbol Linking**: 1-char references for any entity type (person, location, function, variable, etc.)
 - **No Special Tools Required**: Works with any text-based LLM interface
 - **Domain Adaptability**: Auto-adjusts compression strategy by content type
-- **Enterprise Ready**: Proven with complex real-world test cases
 
 ## SFC Versions
 
